@@ -1,6 +1,11 @@
-;;; propfont-mixed --- Use proportional fonts with space-based indentation. -*- lexical-binding: t -*-
+;;; propfont-mixed.el --- Use proportional fonts with space-based indentation. -*- lexical-binding: t -*-
 ;;
 ;; Copyright (C) 2014 Kirill Ignatiev <github.com/ikirill>
+;;
+;; Author: Kirill Ignatiev <github.com/ikirill>
+;; Version: 0.1
+;; Keywords: faces
+;; URL: https://github.com/ikirill/propfont-mixed
 ;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -17,9 +22,19 @@
 ;;
 ;;; Commentary:
 ;;
-;; Using proportional fonts in space-indented code can mess up
-;; indentation. This renders all symbols in proportional fonts
-;; whenever that does not affect indentation.
+;; Enable use of variable-width fonts for displaying symbols,
+;; in a way that does not conflict with fixed-width-space-based
+;; indentation.
+;;
+;; Notes:
+;;
+;; - Customize `propfont-mixed-inhibit-regexes' to forbid some symbols
+;;   from being shown with proportional fonts. See also
+;;   `propfont-mixed-inhibit-function', and `propfont-mixed-min-length'.
+;;
+;; - It is probably necessary to adjust the face `variable-pitch', so
+;;   that the proportional font looks good and is the correct size to
+;;   match the default font.
 ;;
 ;;; Code:
 
@@ -150,6 +165,7 @@ to ignore symbols appearing after an open parenthesis-type character."
 ;;   (font-lock-flush)
 ;;   (font-lock-ensure))
 
+;;;###autoload
 (define-minor-mode propfont-mixed-minor-mode
   "Enable use of variable-width fonts for displaying symbols,
 in a way that does not conflict with fixed-width-space-based
@@ -187,7 +203,4 @@ Notes:
 ;; }}}
 
 (provide 'propfont-mixed)
-
-;;; Local Variables:
-;;; End:
-;;; propfont-mixed ends here
+;;; propfont-mixed.el ends here
