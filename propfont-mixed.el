@@ -6,6 +6,7 @@
 ;; Version: 0.1
 ;; Keywords: faces
 ;; URL: https://github.com/ikirill/propfont-mixed
+;; Package-Requires: ((emacs "24"))
 ;;
 ;; This program is free software: you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
