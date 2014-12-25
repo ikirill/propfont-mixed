@@ -38,6 +38,8 @@
 ;;
 ;;; Code:
 
+(require 'cl-lib)
+
 ;; {{{ Customizations
 
 (defgroup propfont-mixed nil
