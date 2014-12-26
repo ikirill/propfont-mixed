@@ -133,7 +133,7 @@ to ignore symbols appearing after an open parenthesis-type character."
   (let* ((special-seps (rx (or "--" "__")))
          (r (rx
              (or symbol-start "--" "__")
-             (group (char alpha) (*? (or (syntax word) (syntax symbol))))
+             (group (char alpha ?_) (*? (or (syntax word) (syntax symbol))))
              (or symbol-end "--" "__"))))
     (cons r special-seps)))
 ;; (insert ?\n (prin1-to-string (propfont-mixed--regexes)))
