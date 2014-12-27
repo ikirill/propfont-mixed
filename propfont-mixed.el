@@ -145,7 +145,10 @@ to ignore symbols appearing after an open parenthesis-type character."
             (setq
              valid nil
              match (search-forward-regexp
-                    "\\(?:\\_<\\|--\\)\\([[:alpha:]]\\(?:\\sw\\|\\s_\\)*?\\)\\(?:\\_>\\|--\\)"
+                    (rx
+                     (or symbol-start "--" "__")
+                     (group (char alpha ?_) (*? (or (syntax word) (syntax symbol))))
+                     (or symbol-end "--" "__"))
                     limit t))
             (not (setq valid (propfont-mixed--match-valid)))))
     (when (and match valid)
