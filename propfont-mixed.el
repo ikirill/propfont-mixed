@@ -73,7 +73,7 @@ functions, etc."
      (face :tag "Other"))))
 
 (defcustom propfont-mixed-inhibit-regexes
-  '("\\`t\\|nil\\'"
+  '("\\`\\(?:t\\|nil\\)\\'"
     "\\`..?\\'")
   "List of regular expressions that a symbol must not match,
 if it is to be displayed with a proportional font. Typically this
